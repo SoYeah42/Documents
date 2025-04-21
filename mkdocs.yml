@@ -27,6 +27,15 @@ theme:
     - navigation.expand
     - toc.integrate
     - navigation.top
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    - navigation.path
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - search.share
+
 
   #logo: assets/SoYeahLogo.png
   favicon: assets/SoYeahLogo.png
