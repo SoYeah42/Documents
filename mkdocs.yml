@@ -1,5 +1,8 @@
-site_name: My MkDocs Material Documentation
-site_url: https://sitename.example
+site_name: SoYeah Reach
+site_url: https://127.0.0.1:8000/
+
+  # Add other pages as needed
+
 theme:
   name: material
   palette:
@@ -18,3 +21,37 @@ theme:
         name: Light mode
       primary: blue
       accent: deep orange
+
+  features:
+    - navigation.sections
+    - navigation.expand
+    - toc.integrate
+    - navigation.top
+
+  #logo: assets/SoYeahLogo.png
+  favicon: assets/SoYeahLogo.png
+
+markdown_extensions:
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+
+extra:
+  social:
+    - icon: fontawesome/brands/youtube 
+      link: https://youtube.com/@james-willett
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/willettjames
+  copyright: Copyright &copy; 2025 SoYeah
+
+plugins:
+  - search
+  - awesome-pages
