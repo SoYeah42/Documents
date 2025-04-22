@@ -80,12 +80,9 @@
     padding: 2.5rem;
     box-shadow: var(--card-shadow);
     backdrop-filter: blur(10px);
-    transition: all var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .md-content article:hover {
-    transform: var(--hover-transform);
-    box-shadow: var(--card-shadow), var(--glow-effect);
     border-color: var(--mocha-accent);
 }
 
@@ -212,7 +209,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Add subtle glow on hover */
 .highlight:hover {
     border-color: rgba(193, 127, 89, 0.2);
-    box-shadow: var(--card-shadow), var(--glow-effect);
+    box-shadow: var(--card-shadow);
 }
 
 /* Table Styling */
@@ -306,24 +303,25 @@ h1, h2, h3, h4, h5, h6 {
     background: var(--mocha-surface);
 }
 
-/* Animation for Page Transitions */
+/* Remove Animation for Page Transitions */
 .md-content {
-    animation: fadeIn 0.3s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    animation: none;
 }
 
 .md-content__inner {
-    animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: none;
+}
+
+/* Remove fadeIn keyframes since they're no longer needed */
+@keyframes fadeIn {
+    from {
+        opacity: 1;
+        transform: none;
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
 }
 
 /* Override any Material background patterns */
