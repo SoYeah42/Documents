@@ -10,11 +10,15 @@
     --darcula-highlight: #323232;  /* Darcula highlight */
     --darcula-selection: #214283;  /* Darcula selection */
     --darcula-comment: #808080;  /* Darcula comments */
+    --darcula-accent: #cc7832;  /* Darcula orange */
+    --darcula-hover: #ffc66d;   /* Darcula yellow */
+    --darcula-header: #3c3f41;  /* Darcula header */
+    --gradient-dark: linear-gradient(145deg, #323232, #2b2b2b);
 }
 
 [data-md-color-scheme="slate"] {
-    --md-primary-fg-color: #4caf50;
-    --md-accent-fg-color: #673ab7;
+    --md-primary-fg-color: var(--darcula-accent);
+    --md-accent-fg-color: var(--darcula-hover);
     --md-bg-color: var(--site-bg-dark);
     --md-card-bg-color: var(--darcula-highlight);
     --md-document-bg-color: var(--site-bg-dark);
@@ -52,15 +56,18 @@
 
 /* Modern Card Styling */
 .md-content article {
-    background-color: var(--md-document-bg-color);
+    background: var(--gradient-dark);
+    border: 1px solid rgba(204, 120, 50, 0.1);  /* Subtle orange border */
     border-radius: var(--border-radius);
     padding: 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform var(--transition-speed);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all var(--transition-speed);
 }
 
 .md-content article:hover {
     transform: translateY(-2px);
+    border-color: rgba(204, 120, 50, 0.3);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* Adjust card shadows for better visibility */
@@ -68,16 +75,36 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
+/* Enhanced Headers */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--darcula-accent) !important;
+    border-bottom: 2px solid rgba(204, 120, 50, 0.2);
+    padding-bottom: 0.3em;
+}
+
 /* Navigation Enhancements */
 .md-nav__link {
     border-radius: var(--border-radius);
     padding: 0.4rem 0.8rem;
-    transition: background-color var(--transition-speed);
+    transition: all var(--transition-speed);
+    position: relative;
 }
 
 .md-nav__link:hover {
     background-color: rgba(var(--md-primary-fg-color--rgb), 0.1);
-    color: #cc7832 !important;  /* Darcula orange */
+    color: var(--darcula-hover) !important;
+    padding-left: 1rem;
+}
+
+.md-nav__link:active {
+    color: var(--darcula-accent) !important;
+}
+
+.md-nav__link--active {
+    color: var(--darcula-accent) !important;
+    font-weight: bold;
+    padding-left: 1rem;
+    border-left: 3px solid var(--darcula-accent);
 }
 
 /* Navigation Background Fix */
@@ -93,13 +120,18 @@
 
 /* Modern Button Styling */
 .md-button {
+    background: var(--gradient-dark);
+    border: 1px solid rgba(204, 120, 50, 0.2);
     border-radius: var(--border-radius);
     padding: 0.6rem 1.2rem;
+    color: var(--darcula-accent) !important;
     transition: all var(--transition-speed);
 }
 
 .md-button:hover {
-    transform: translateY(-1px);
+    background: var(--darcula-highlight);
+    border-color: var(--darcula-accent);
+    transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -108,6 +140,8 @@
     border-radius: var(--border-radius);
     margin: 1.5rem 0;
     background-color: var(--darcula-highlight) !important;
+    border: 1px solid rgba(204, 120, 50, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Code syntax colors to match Darcula */
@@ -127,14 +161,26 @@
 .md-typeset table:not([class]) {
     border-radius: var(--border-radius);
     overflow: hidden;
+    background: var(--gradient-dark);
+    border: 1px solid rgba(204, 120, 50, 0.1);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.md-typeset table:not([class]) th {
+    background-color: var(--darcula-header);
+    color: var(--darcula-accent);
 }
 
 /* Search Bar Styling */
 .md-search__input {
     border-radius: var(--border-radius);
     backdrop-filter: blur(10px);
-    background-color: var(--darcula-highlight);
+    background: var(--gradient-dark);
+    border: 1px solid rgba(204, 120, 50, 0.1);
+}
+
+.md-search__input:focus {
+    border-color: var(--darcula-accent);
 }
 
 /* Header Enhancement */
@@ -201,6 +247,21 @@
     from {
         opacity: 0;
         transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.md-content__inner {
+    animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
