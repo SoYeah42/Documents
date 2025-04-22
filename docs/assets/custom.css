@@ -142,6 +142,46 @@
     -webkit-text-fill-color: var(--nord10);
 }
 
+/* Light Theme Navigation Background Fixes */
+[data-md-color-scheme="default"] .md-nav--primary .md-nav__title,
+[data-md-color-scheme="default"] .md-nav--secondary {
+    background-color: var(--nord6) !important;
+    color: var(--nord1);
+}
+
+[data-md-color-scheme="default"] .md-nav__item {
+    background-color: var(--nord6);
+}
+
+[data-md-color-scheme="default"] .md-nav__list {
+    background-color: var(--nord6);
+}
+
+[data-md-color-scheme="default"] .md-sidebar {
+    background-color: var(--nord6);
+}
+
+[data-md-color-scheme="default"] .md-sidebar .md-nav {
+    background-color: var(--nord6);
+}
+
+[data-md-color-scheme="default"] .md-nav__title {
+    color: var(--nord1);
+    background-color: var(--nord5) !important;
+    border-radius: var(--border-radius);
+    margin-bottom: 1rem;
+}
+
+[data-md-color-scheme="default"] .md-nav__link--active {
+    color: var(--nord10) !important;
+    background-color: var(--nord5);
+    border-left: 3px solid var(--nord10);
+}
+
+[data-md-color-scheme="default"] .md-nav__item .md-nav__link--active {
+    color: var(--nord10) !important;
+}
+
 /* Document Background */
 .md-main__inner {
     background-color: var(--md-document-bg-color);
