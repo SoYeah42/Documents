@@ -598,3 +598,81 @@ h1, h2, h3, h4, h5, h6 {
 .md-nav--secondary {
     background-color: var(--mocha-bg) !important;
 }
+
+/* Navigation Width and Responsiveness */
+.md-sidebar {
+    width: 20rem !important;
+    min-width: 15rem;
+}
+
+@media screen and (max-width: 76.1875em) {
+    .md-sidebar--primary {
+        width: 100% !important;
+        left: -100%;
+    }
+}
+
+/* Navigation Container */
+.md-nav {
+    padding: 0.5rem;
+    width: 100%;
+}
+
+.md-nav__list {
+    width: 100%;
+    padding-right: 0.5rem;
+}
+
+/* Navigation Items */
+.md-nav__item {
+    margin: 4px 0;
+    width: 100%;
+}
+
+.md-nav__link {
+    padding: 0.6rem 1rem;
+    margin: 0;
+    border-radius: 6px;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Nested Navigation */
+.md-nav__item .md-nav {
+    margin-left: 1rem;
+}
+
+/* Scrollbar for Navigation */
+.md-sidebar__scrollwrap {
+    margin: 0;
+    padding: 0 0.8rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Ensure content adjusts to wider navigation */
+@media screen and (min-width: 76.25em) {
+    .md-content {
+        margin-left: 20rem;
+    }
+    
+    .md-sidebar--primary {
+        width: 20rem;
+    }
+}
+
+/* Tablet and Mobile Optimization */
+@media screen and (max-width: 76.1875em) {
+    .md-nav {
+        background-color: var(--md-bg-color);
+        padding: 1rem;
+    }
+    
+    .md-nav__title {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
