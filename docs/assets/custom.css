@@ -594,6 +594,20 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0;
 }
 
+/* Remove Navigation Headers */
+.md-nav__title {
+    display: none;
+}
+
+.md-nav--primary > .md-nav__title {
+    display: block;  /* Keep only the main site title */
+    background: none !important;
+    box-shadow: none;
+    border: none;
+    padding: 1rem 0.8rem;
+    margin: 0;
+}
+
 /* Mobile Responsiveness Fixes */
 @media screen and (max-width: 76.1875em) {
     /* Navigation Drawer */
@@ -624,11 +638,17 @@ h1, h2, h3, h4, h5, h6 {
 
     .md-grid {
         margin: 0 auto;
+        padding: 0 1rem;  /* Smaller padding on mobile */
     }
 
     /* Prevent content scroll when nav is open */
     [data-md-toggle="drawer"]:checked ~ .md-container .md-main {
         overflow: hidden;
+    }
+
+    .md-nav--primary > .md-nav__title {
+        background: none !important;
+        box-shadow: none;
     }
 }
 
@@ -645,12 +665,23 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+/* Tablet and Desktop Adjustments */
+@media screen and (min-width: 76.25em) {
+    .md-content {
+        margin-left: 16rem;  /* Account for sidebar */
+    }
+    
+    .md-sidebar--primary {
+        width: 16rem;
+    }
+}
+
 /* Large Screen Optimization */
 @media screen and (min-width: 88em) {
     .md-grid {
         max-width: 90rem !important;
         margin: 0 auto;         /* Center the content */
-        padding: 0 1rem;        /* Add some padding on the sides */
+        padding: 0 2rem;        /* Add horizontal padding */
     }
 }
 
@@ -660,60 +691,11 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
 }
 
-.md-nav__list {
-    width: 100%;
-    padding-right: 0.1rem;   /* Reduce right padding */
-}
-
-/* Navigation Items */
-.md-nav__item {
-    margin: 2px 0;
-    padding: 0;
-    width: 100%;
-}
-
-/* Nested Navigation */
-.md-nav__item .md-nav {
-    margin-left: 1rem;
-}
-
-/* Scrollbar for Navigation */
-.md-sidebar__scrollwrap {
-    margin: 0;
-    padding: 0 0.2rem;       /* Reduce padding in navigation */
-    overflow-y: auto;
-    overflow-x: hidden;
-}
-
-/* Ensure content adjusts to wider navigation */
-@media screen and (min-width: 76.25em) {
-    .md-content {
-        margin-left: 16rem;  /* Match sidebar width */
-    }
-    
-    .md-sidebar--primary {
-        width: 16rem;
-    }
-}
-
-/* Tablet and Mobile Optimization */
-@media screen and (max-width: 76.1875em) {
-    .md-nav {
-        background-color: var(--md-bg-color);
-        padding: 1rem;
-    }
-    
-    .md-nav__title {
-        padding-left: 0;
-        padding-right: 0;
-    }
-}
-
 /* Article Width and Layout */
 .md-grid {
     max-width: 90rem !important;  /* Increased from default */
     margin: 0 auto;         /* Center the content */
-    padding: 0 1rem;        /* Add padding on sides */
+    padding: 0 2rem;        /* Add horizontal padding */
 }
 
 /* Article Container */
