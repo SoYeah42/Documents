@@ -376,20 +376,51 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Search Enhancement */
 .md-search__input {
-    background: var(--mocha-gradient);
+    background: var(--mocha-bg) !important;
     border: 1px solid var(--glass-effect);
     border-radius: var(--border-radius);
     padding: 0.6rem 1rem;
-    backdrop-filter: blur(10px);
-    transition: all var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.md-search__input:focus {
-    border-color: var(--mocha-accent);
+    color: var(--mocha-text);
+    transition: all var(--transition-speed);
 }
 
 .md-search__input::placeholder {
     color: var(--mocha-muted);
+    opacity: 0.7;
+}
+
+.md-search__icon {
+    color: var(--mocha-muted);
+}
+
+/* Remove white glow from navigation */
+[data-md-color-scheme="default"] .md-nav--primary .md-nav__title {
+    background-color: var(--nord6) !important;
+    color: var(--nord1);
+    box-shadow: none;
+    margin: 0;
+    padding: 1rem 0.8rem;
+}
+
+/* Fix search box container */
+.md-search {
+    padding: 0;
+}
+
+.md-search__form {
+    border-radius: var(--border-radius);
+    background-color: transparent;
+}
+
+/* Ensure search icon matches text color */
+.md-search__icon[for="__search"] {
+    color: var(--mocha-text);
+}
+
+/* Fix the background of search suggestions */
+.md-search__output {
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    background-color: var(--mocha-bg);
 }
 
 /* Search Bar Enhancement - Light Theme */
