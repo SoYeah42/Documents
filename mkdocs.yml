@@ -12,16 +12,16 @@ theme:
       toggle:
         icon: material/weather-sunny
         name: Dark mode
-      primary: green
-      accent: deep purple
+      primary: cyan   # Maps to Nord Frost colors
+      accent: blue    # Maps to Nord Frost colors
 
     # Light Mode
     - scheme: default
       toggle:
         icon: material/weather-night
         name: Light mode
-      primary: blue
-      accent: deep orange
+      primary: indigo  # Complements Nord theme
+      accent: cyan     # Matches dark mode primary
 
   features:
     - navigation.sections
@@ -79,4 +79,4 @@ nav:
     - Release Notes: release-notes.md
 
 extra_css:
-  - assets/custom.css 
+  - assets/custom.css
