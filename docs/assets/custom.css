@@ -5,19 +5,26 @@
     --border-radius: 8px;
     --transition-speed: 0.3s;
     --md-document-bg-color: #ffffff;
-    --site-bg-dark: #2d3748;  /* Adding consistent dark grey color */
+    --site-bg-dark: #2b2b2b;  /* Darcula background */
+    --darcula-text: #a9b7c6;  /* Darcula default text */
+    --darcula-highlight: #323232;  /* Darcula highlight */
+    --darcula-selection: #214283;  /* Darcula selection */
+    --darcula-comment: #808080;  /* Darcula comments */
 }
 
 [data-md-color-scheme="slate"] {
     --md-primary-fg-color: #4caf50;
     --md-accent-fg-color: #673ab7;
-    --md-bg-color: var(--site-bg-dark);  /* Changed to consistent grey */
-    --md-card-bg-color: #3a4758;  /* Slightly lighter grey */
-    --md-document-bg-color: var(--site-bg-dark);  /* Matching the grey theme */
+    --md-bg-color: var(--site-bg-dark);
+    --md-card-bg-color: var(--darcula-highlight);
+    --md-document-bg-color: var(--site-bg-dark);
     --md-default-bg-color: var(--site-bg-dark);
     --md-footer-bg-color: var(--site-bg-dark);
     --md-footer-bg-color--dark: var(--site-bg-dark);
-    --md-code-bg-color: #1e2632;  /* Slightly darker for code blocks */
+    --md-code-bg-color: #2b2b2b;
+    --md-default-fg-color: var(--darcula-text);
+    --md-default-fg-color--light: var(--darcula-text);
+    --md-typeset-color: var(--darcula-text);
 }
 
 /* Add these new selectors to force consistent background colors */
@@ -70,11 +77,13 @@
 
 .md-nav__link:hover {
     background-color: rgba(var(--md-primary-fg-color--rgb), 0.1);
+    color: #cc7832 !important;  /* Darcula orange */
 }
 
 /* Navigation Background Fix */
 .md-nav {
     background-color: var(--md-document-bg-color);
+    color: var(--darcula-text);
 }
 
 /* Sidebar Background Fix */
@@ -98,6 +107,20 @@
 .highlight {
     border-radius: var(--border-radius);
     margin: 1.5rem 0;
+    background-color: var(--darcula-highlight) !important;
+}
+
+/* Code syntax colors to match Darcula */
+[data-md-color-scheme="slate"] .highlight .k {
+    color: #cc7832;  /* Keywords */
+}
+
+[data-md-color-scheme="slate"] .highlight .s {
+    color: #6a8759;  /* Strings */
+}
+
+[data-md-color-scheme="slate"] .highlight .c1 {
+    color: var(--darcula-comment);  /* Comments */
 }
 
 /* Table Styling */
@@ -111,19 +134,20 @@
 .md-search__input {
     border-radius: var(--border-radius);
     backdrop-filter: blur(10px);
+    background-color: var(--darcula-highlight);
 }
 
 /* Header Enhancement */
 .md-header {
     backdrop-filter: blur(10px);
-    background-color: rgba(45, 55, 72, 0.9);  /* Changed to match grey theme */
+    background-color: #3c3f41 !important;  /* Darcula header color */
     background-image: none !important;
 }
 
 /* Footer Styling */
 .md-footer {
     backdrop-filter: blur(10px);
-    background-color: rgba(45, 55, 72, 0.9);  /* Changed to match grey theme */
+    background-color: #3c3f41 !important;  /* Darcula header color */
     background-image: none !important;
 }
 
@@ -135,6 +159,15 @@
 
 .md-content img:hover {
     transform: scale(1.02);
+}
+
+/* Links */
+[data-md-color-scheme="slate"] .md-typeset a {
+    color: #cc7832;  /* Darcula orange */
+}
+
+[data-md-color-scheme="slate"] .md-typeset a:hover {
+    color: #ffc66d;  /* Darcula yellow */
 }
 
 /* Admonitions Styling */
