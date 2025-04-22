@@ -11,17 +11,17 @@ theme:
     - scheme: slate
       toggle:
         icon: material/weather-sunny
-        name: Dark mode
-      primary: cyan   # Maps to Nord Frost colors
-      accent: blue    # Maps to Nord Frost colors
+        name: Switch to light mode
+      primary: "#88c0d0"   # Nord Frost (nord8)
+      accent: "#5e81ac"    # Nord Frost (nord10)
 
     # Light Mode
     - scheme: default
       toggle:
         icon: material/weather-night
-        name: Light mode
-      primary: indigo  # Complements Nord theme
-      accent: cyan     # Matches dark mode primary
+        name: Switch to dark mode
+      primary: "#5e81ac"   # Nord Frost (nord10)
+      accent: "#81a1c1"    # Nord Frost (nord9)
 
   features:
     - navigation.sections
