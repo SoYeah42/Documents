@@ -4,125 +4,147 @@
     --md-accent-fg-color: #ff5722;
     --border-radius: 8px;
     --transition-speed: 0.3s;
-  }
-  
-  [data-md-color-scheme="slate"] {
+    --md-document-bg-color: #ffffff;
+}
+
+[data-md-color-scheme="slate"] {
     --md-primary-fg-color: #4caf50;
     --md-accent-fg-color: #673ab7;
     --md-bg-color: #1a1a1a;
     --md-card-bg-color: #2d2d2d;
-  }
-  
-  /* Modern Card Styling */
-  .md-content article {
-    background-color: var(--md-card-bg-color);
+    --md-document-bg-color: #1a1a1a;
+}
+
+/* Document Background */
+.md-main__inner {
+    background-color: var(--md-document-bg-color);
+}
+
+/* Theme Toggle Icon Color - Dark Mode */
+[data-md-color-scheme="slate"] .md-header__button.md-icon {
+    color: var(--md-primary-fg-color);
+}
+
+/* Modern Card Styling */
+.md-content article {
+    background-color: var(--md-document-bg-color);
     border-radius: var(--border-radius);
     padding: 2rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform var(--transition-speed);
-  }
-  
-  .md-content article:hover {
+}
+
+.md-content article:hover {
     transform: translateY(-2px);
-  }
-  
-  /* Navigation Enhancements */
-  .md-nav__link {
+}
+
+/* Navigation Enhancements */
+.md-nav__link {
     border-radius: var(--border-radius);
     padding: 0.4rem 0.8rem;
     transition: background-color var(--transition-speed);
-  }
-  
-  .md-nav__link:hover {
+}
+
+.md-nav__link:hover {
     background-color: rgba(var(--md-primary-fg-color--rgb), 0.1);
-  }
-  
-  /* Modern Button Styling */
-  .md-button {
+}
+
+/* Navigation Background Fix */
+.md-nav {
+    background-color: var(--md-document-bg-color);
+}
+
+/* Sidebar Background Fix */
+.md-sidebar__scrollwrap {
+    background-color: var(--md-document-bg-color);
+}
+
+/* Modern Button Styling */
+.md-button {
     border-radius: var(--border-radius);
     padding: 0.6rem 1.2rem;
     transition: all var(--transition-speed);
-  }
-  
-  .md-button:hover {
+}
+
+.md-button:hover {
     transform: translateY(-1px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Code Block Styling */
-  .highlight {
+}
+
+/* Code Block Styling */
+.highlight {
     border-radius: var(--border-radius);
     margin: 1.5rem 0;
-  }
-  
-  /* Table Styling */
-  .md-typeset table:not([class]) {
+}
+
+/* Table Styling */
+.md-typeset table:not([class]) {
     border-radius: var(--border-radius);
     overflow: hidden;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Search Bar Styling */
-  .md-search__input {
+}
+
+/* Search Bar Styling */
+.md-search__input {
     border-radius: var(--border-radius);
     backdrop-filter: blur(10px);
-  }
-  
-  /* Header Enhancement */
-  .md-header {
+}
+
+/* Header Enhancement */
+.md-header {
     backdrop-filter: blur(10px);
     background-color: rgba(var(--md-primary-fg-color--rgb), 0.9);
-  }
-  
-  /* Footer Styling */
-  .md-footer {
+}
+
+/* Footer Styling */
+.md-footer {
     backdrop-filter: blur(10px);
-  }
-  
-  /* Image Styling */
-  .md-content img {
+}
+
+/* Image Styling */
+.md-content img {
     border-radius: var(--border-radius);
     transition: transform var(--transition-speed);
-  }
-  
-  .md-content img:hover {
+}
+
+.md-content img:hover {
     transform: scale(1.02);
-  }
-  
-  /* Admonitions Styling */
-  .md-typeset .admonition {
+}
+
+/* Admonitions Styling */
+.md-typeset .admonition {
     border-radius: var(--border-radius);
     border-left-width: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Scrollbar Styling */
-  ::-webkit-scrollbar {
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
     width: 8px;
     height: 8px;
-  }
-  
-  ::-webkit-scrollbar-track {
+}
+
+::-webkit-scrollbar-track {
     background: transparent;
-  }
-  
-  ::-webkit-scrollbar-thumb {
+}
+
+::-webkit-scrollbar-thumb {
     background: var(--md-primary-fg-color);
     border-radius: 4px;
-  }
-  
-  /* Animation for Page Transitions */
-  .md-content {
+}
+
+/* Animation for Page Transitions */
+.md-content {
     animation: fadeIn 0.3s ease-in-out;
-  }
-  
-  @keyframes fadeIn {
+}
+
+@keyframes fadeIn {
     from {
-      opacity: 0;
-      transform: translateY(10px);
+        opacity: 0;
+        transform: translateY(10px);
     }
     to {
-      opacity: 1;
-      transform: translateY(0);
+        opacity: 1;
+        transform: translateY(0);
     }
-  }
+}
