@@ -28,7 +28,6 @@
     --accent-gradient: linear-gradient(135deg,
         var(--mocha-accent) 0%,
         var(--mocha-gold) 100%);
-    --glow-effect: 0 0 20px rgba(193, 127, 89, 0.15);
 }
 
 /* Dark Theme Configuration */
@@ -80,10 +79,11 @@
     padding: 2.5rem;
     box-shadow: var(--card-shadow);
     backdrop-filter: blur(10px);
+    transition: border-color var(--transition-speed);
 }
 
 .md-content article:hover {
-    border-color: var(--mocha-accent);
+    border-color: var(--mocha-subtle);
 }
 
 /* Typography Enhancement */
@@ -147,7 +147,7 @@ h1, h2, h3, h4, h5, h6 {
 .md-button:hover {
     background: var(--accent-gradient);
     transform: var(--hover-transform);
-    box-shadow: var(--card-shadow), var(--glow-effect);
+    box-shadow: var(--card-shadow);
 }
 
 /* Code Blocks */
@@ -239,7 +239,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .md-search__input:focus {
     border-color: var(--mocha-accent);
-    box-shadow: var(--glow-effect);
 }
 
 .md-search__input::placeholder {
