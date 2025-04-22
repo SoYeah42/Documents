@@ -11,9 +11,22 @@
 [data-md-color-scheme="slate"] {
     --md-primary-fg-color: #4caf50;
     --md-accent-fg-color: #673ab7;
-    --md-bg-color: #2d3748;  /* Changed to consistent grey */
+    --md-bg-color: var(--site-bg-dark);  /* Changed to consistent grey */
     --md-card-bg-color: #3a4758;  /* Slightly lighter grey */
-    --md-document-bg-color: #2d3748;  /* Matching the grey theme */
+    --md-document-bg-color: var(--site-bg-dark);  /* Matching the grey theme */
+}
+
+/* Add these new selectors to force consistent background colors */
+[data-md-color-scheme="slate"] .md-sidebar {
+    background-color: var(--site-bg-dark);
+}
+
+[data-md-color-scheme="slate"] .md-main {
+    background-color: var(--site-bg-dark);
+}
+
+[data-md-color-scheme="slate"] .md-content__inner {
+    background-color: var(--site-bg-dark);
 }
 
 /* Document Background */
