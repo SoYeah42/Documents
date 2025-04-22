@@ -1,95 +1,128 @@
-/* General reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body styles */
-body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-}
-
-/* Header styles */
-.md-header {
-    background: linear-gradient(to right, #6a11cb, #2575fc);
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
-
-.md-header h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-}
-
-/* Navigation styles */
-.md-nav {
-    background-color: #fff;
-    border-bottom: 2px solid #eaeaea;
-}
-
-.md-nav a {
-    color: #2575fc;
-    text-decoration: none;
-    padding: 15px;
-    display: inline-block;
-}
-
-.md-nav a:hover {
-    background-color: #eaeaea;
-    border-radius: 5px;
-}
-
-/* Content styles */
-.md-content {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Code block styles */
-pre {
-    background-color: #f4f4f4;
-    border-left: 4px solid #2575fc;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-/* Button styles */
-button {
-    background-color: #2575fc;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #6a11cb;
-}
-
-/* Footer styles */
-.md-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-}
-
-/* Media Queries for responsiveness */
-@media (max-width: 768px) {
-    .md-content {
-        padding: 15px;
+/* Modern Variables */
+:root {
+    --md-primary-fg-color: #2196f3;
+    --md-accent-fg-color: #ff5722;
+    --border-radius: 8px;
+    --transition-speed: 0.3s;
+  }
+  
+  [data-md-color-scheme="slate"] {
+    --md-primary-fg-color: #4caf50;
+    --md-accent-fg-color: #673ab7;
+    --md-bg-color: #1a1a1a;
+    --md-card-bg-color: #2d2d2d;
+  }
+  
+  /* Modern Card Styling */
+  .md-content article {
+    background-color: var(--md-card-bg-color);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform var(--transition-speed);
+  }
+  
+  .md-content article:hover {
+    transform: translateY(-2px);
+  }
+  
+  /* Navigation Enhancements */
+  .md-nav__link {
+    border-radius: var(--border-radius);
+    padding: 0.4rem 0.8rem;
+    transition: background-color var(--transition-speed);
+  }
+  
+  .md-nav__link:hover {
+    background-color: rgba(var(--md-primary-fg-color--rgb), 0.1);
+  }
+  
+  /* Modern Button Styling */
+  .md-button {
+    border-radius: var(--border-radius);
+    padding: 0.6rem 1.2rem;
+    transition: all var(--transition-speed);
+  }
+  
+  .md-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Code Block Styling */
+  .highlight {
+    border-radius: var(--border-radius);
+    margin: 1.5rem 0;
+  }
+  
+  /* Table Styling */
+  .md-typeset table:not([class]) {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Search Bar Styling */
+  .md-search__input {
+    border-radius: var(--border-radius);
+    backdrop-filter: blur(10px);
+  }
+  
+  /* Header Enhancement */
+  .md-header {
+    backdrop-filter: blur(10px);
+    background-color: rgba(var(--md-primary-fg-color--rgb), 0.9);
+  }
+  
+  /* Footer Styling */
+  .md-footer {
+    backdrop-filter: blur(10px);
+  }
+  
+  /* Image Styling */
+  .md-content img {
+    border-radius: var(--border-radius);
+    transition: transform var(--transition-speed);
+  }
+  
+  .md-content img:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Admonitions Styling */
+  .md-typeset .admonition {
+    border-radius: var(--border-radius);
+    border-left-width: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Scrollbar Styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--md-primary-fg-color);
+    border-radius: 4px;
+  }
+  
+  /* Animation for Page Transitions */
+  .md-content {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
     }
-
-    .md-header h1 {
-        font-size: 2em;
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
-}
+  }
