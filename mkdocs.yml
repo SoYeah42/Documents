@@ -1,7 +1,8 @@
-site_name: SoYeah Reach
-site_url: https://127.0.0.1:8000/
+site_name: SoYeah Documntation
+site_url: https://soyeah42.github.io/Documents/
+site_description: SoYeah Help Me Center
+site_author: Mechanic
 
-  # Add other pages as needed
 
 theme:
   name: material
@@ -76,3 +77,6 @@ nav:
   - About:
     - License: license.md
     - Release Notes: release-notes.md
+
+extra_css:
+  - assets/custom.css 
