@@ -5,14 +5,15 @@
     --border-radius: 8px;
     --transition-speed: 0.3s;
     --md-document-bg-color: #ffffff;
+    --site-bg-dark: #2d3748;  /* Adding consistent dark grey color */
 }
 
 [data-md-color-scheme="slate"] {
     --md-primary-fg-color: #4caf50;
     --md-accent-fg-color: #673ab7;
-    --md-bg-color: #1a202c;  /* Updated to dark blue-gray */
-    --md-card-bg-color: #2d3748;  /* Slightly lighter blue-gray */
-    --md-document-bg-color: #1a202c;  /* Matching the bg-color */
+    --md-bg-color: #2d3748;  /* Changed to consistent grey */
+    --md-card-bg-color: #3a4758;  /* Slightly lighter grey */
+    --md-document-bg-color: #2d3748;  /* Matching the grey theme */
 }
 
 /* Document Background */
@@ -98,13 +99,13 @@
 /* Header Enhancement */
 .md-header {
     backdrop-filter: blur(10px);
-    background-color: rgba(26, 32, 44, 0.9);  /* Matching the new dark theme */
+    background-color: rgba(45, 55, 72, 0.9);  /* Changed to match grey theme */
 }
 
 /* Footer Styling */
 .md-footer {
     backdrop-filter: blur(10px);
-    background-color: rgba(26, 32, 44, 0.9);  /* Matching the new dark theme */
+    background-color: rgba(45, 55, 72, 0.9);  /* Changed to match grey theme */
 }
 
 /* Image Styling */
