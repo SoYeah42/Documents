@@ -197,10 +197,11 @@
     background: var(--mocha-gradient);
     border: 1px solid var(--glass-effect);
     border-radius: var(--border-radius);
-    padding: 2.5rem;
+    padding: 2rem;           /* Reduced padding */
     box-shadow: var(--card-shadow);
     backdrop-filter: blur(10px);
     transition: border-color var(--transition-speed);
+    max-width: 100%;
 }
 
 .md-content article:hover {
@@ -248,7 +249,10 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Navigation Refinement */
 .md-nav__link {
-    padding: 0.75rem 1rem;
+    padding: 0.4rem 0.6rem;  /* Adjusted padding */
+    white-space: normal;     /* Allow text wrapping */
+    line-height: 1.3;        /* Better line height for wrapped text */
+    height: auto;            /* Allow height to adjust to content */
     margin: 0.2rem 0;
     border-radius: var(--border-radius);
     transition: all var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
@@ -272,11 +276,14 @@ h1, h2, h3, h4, h5, h6 {
 .md-nav {
     background-color: var(--md-document-bg-color);
     color: var(--mocha-text);
+    padding: 0.5rem;
+    width: 100%;
 }
 
 /* Sidebar Background Fix */
 .md-sidebar__scrollwrap {
     background-color: var(--md-document-bg-color);
+    padding: 0 0.4rem;       /* Reduced padding */
 }
 
 /* Interactive Elements */
@@ -462,37 +469,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Modern Navigation Styling */
-.md-nav {
-    padding: 0.5rem;
+.md-nav__item {
+    margin: 2px 0;           /* Reduced margin */
+    width: 100%;
+    padding: 0;
 }
 
 .md-nav__list {
     border-radius: var(--border-radius);
-}
-
-[data-md-color-scheme="default"] .md-nav__item {
-    margin: 4px 0;
-    border-radius: 6px;
-    transition: background-color 0.2s ease;
-}
-
-[data-md-color-scheme="default"] .md-nav__link {
-    padding: 0.6rem 0.8rem;
-    margin: 0;
-    border-radius: 6px;
-    transition: all 0.2s ease;
-}
-
-[data-md-color-scheme="default"] .md-nav__link:hover {
-    background-color: var(--nord5);
-    transform: translateX(3px);
-}
-
-[data-md-color-scheme="default"] .md-nav__link--active {
-    background-color: var(--nord5);
-    color: var(--nord10) !important;
-    font-weight: 600;
-    border-left: 3px solid var(--nord10);
+    padding-right: 0.2rem;   /* Reduced padding */
+    width: 100%;
 }
 
 /* Footer Styling */
@@ -505,12 +491,14 @@ h1, h2, h3, h4, h5, h6 {
 /* Sidebar Enhancement */
 [data-md-color-scheme="default"] .md-sidebar {
     background-color: var(--nord6);
+    width: 16rem !important; /* Slightly reduced width */
+    min-width: 12rem;
     padding: 0;
     border-right: 1px solid var(--nord4);
 }
 
 [data-md-color-scheme="default"] .md-sidebar__scrollwrap {
-    padding: 0 0.8rem;
+    padding: 0 0.4rem;       /* Reduced padding */
 }
 
 /* Image Styling */
@@ -559,6 +547,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Remove Animation for Page Transitions */
 .md-content {
     animation: none;
+    max-width: none;
 }
 
 .md-content__inner {
@@ -601,8 +590,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Navigation Width and Responsiveness */
 .md-sidebar {
-    width: 20rem !important;
-    min-width: 15rem;
+    width: 16rem !important; /* Slightly reduced width */
+    min-width: 12rem;
 }
 
 @media screen and (max-width: 76.1875em) {
@@ -620,17 +609,18 @@ h1, h2, h3, h4, h5, h6 {
 
 .md-nav__list {
     width: 100%;
-    padding-right: 0.5rem;
+    padding-right: 0.2rem;   /* Reduced padding */
 }
 
 /* Navigation Items */
 .md-nav__item {
-    margin: 4px 0;
+    margin: 2px 0;           /* Reduced margin */
     width: 100%;
+    padding: 0;
 }
 
 .md-nav__link {
-    padding: 0.6rem 1rem;
+    padding: 0.4rem 0.6rem;  /* Adjusted padding */
     margin: 0;
     border-radius: 6px;
     width: 100%;
@@ -648,7 +638,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Scrollbar for Navigation */
 .md-sidebar__scrollwrap {
     margin: 0;
-    padding: 0 0.8rem;
+    padding: 0 0.4rem;       /* Reduced padding */
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -656,11 +646,11 @@ h1, h2, h3, h4, h5, h6 {
 /* Ensure content adjusts to wider navigation */
 @media screen and (min-width: 76.25em) {
     .md-content {
-        margin-left: 20rem;
+        margin-left: 16rem;  /* Match sidebar width */
     }
     
     .md-sidebar--primary {
-        width: 20rem;
+        width: 16rem;
     }
 }
 
@@ -674,5 +664,27 @@ h1, h2, h3, h4, h5, h6 {
     .md-nav__title {
         padding-left: 0;
         padding-right: 0;
+    }
+}
+
+/* Article Width and Layout */
+.md-grid {
+    max-width: 90rem !important;  /* Increased from default */
+}
+
+/* Article Container */
+.md-content article {
+    max-width: 100%;
+    padding: 2rem;           /* Reduced padding */
+}
+
+/* Ensure content adjusts to navigation */
+@media screen and (min-width: 76.25em) {
+    .md-content {
+        margin-left: 16rem;  /* Match sidebar width */
+    }
+    
+    .md-sidebar--primary {
+        width: 16rem;
     }
 }
