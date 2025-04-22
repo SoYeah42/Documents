@@ -14,6 +14,10 @@
     --md-bg-color: var(--site-bg-dark);  /* Changed to consistent grey */
     --md-card-bg-color: #3a4758;  /* Slightly lighter grey */
     --md-document-bg-color: var(--site-bg-dark);  /* Matching the grey theme */
+    --md-default-bg-color: var(--site-bg-dark);
+    --md-footer-bg-color: var(--site-bg-dark);
+    --md-footer-bg-color--dark: var(--site-bg-dark);
+    --md-code-bg-color: #1e2632;  /* Slightly darker for code blocks */
 }
 
 /* Add these new selectors to force consistent background colors */
@@ -113,12 +117,14 @@
 .md-header {
     backdrop-filter: blur(10px);
     background-color: rgba(45, 55, 72, 0.9);  /* Changed to match grey theme */
+    background-image: none !important;
 }
 
 /* Footer Styling */
 .md-footer {
     backdrop-filter: blur(10px);
     background-color: rgba(45, 55, 72, 0.9);  /* Changed to match grey theme */
+    background-image: none !important;
 }
 
 /* Image Styling */
@@ -167,4 +173,26 @@
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* Override any Material background patterns */
+.md-main {
+    background-image: none !important;
+}
+
+.md-footer {
+    background-image: none !important;
+}
+
+.md-header {
+    background-image: none !important;
+}
+
+/* Ensure navigation sections are consistent */
+.md-nav--primary .md-nav__title {
+    background-color: var(--site-bg-dark) !important;
+}
+
+.md-nav--secondary {
+    background-color: var(--site-bg-dark) !important;
 }
