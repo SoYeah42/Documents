@@ -72,6 +72,10 @@ nav:
     - SoYeah Reach: 
       - Getting Started: getting-started.md
       - Features: features.md
+    - SoYeah Messenger:
+      - Instant Messenger Apps: instant_messenger_apps.md
+      - Getting Started: getting-started.md
+      - Features: features.md
     - Writing your docs: writing-your-docs.md
     - Styling your docs: styling-your-docs.md
   - About:
