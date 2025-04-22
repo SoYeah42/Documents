@@ -10,9 +10,9 @@
 [data-md-color-scheme="slate"] {
     --md-primary-fg-color: #4caf50;
     --md-accent-fg-color: #673ab7;
-    --md-bg-color: #1a1a1a;
-    --md-card-bg-color: #2d2d2d;
-    --md-document-bg-color: #1a1a1a;
+    --md-bg-color: #1a202c;  /* Updated to dark blue-gray */
+    --md-card-bg-color: #2d3748;  /* Slightly lighter blue-gray */
+    --md-document-bg-color: #1a202c;  /* Matching the bg-color */
 }
 
 /* Document Background */
@@ -36,6 +36,11 @@
 
 .md-content article:hover {
     transform: translateY(-2px);
+}
+
+/* Adjust card shadows for better visibility */
+[data-md-color-scheme="slate"] .md-content article {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 /* Navigation Enhancements */
@@ -93,12 +98,13 @@
 /* Header Enhancement */
 .md-header {
     backdrop-filter: blur(10px);
-    background-color: rgba(var(--md-primary-fg-color--rgb), 0.9);
+    background-color: rgba(26, 32, 44, 0.9);  /* Matching the new dark theme */
 }
 
 /* Footer Styling */
 .md-footer {
     backdrop-filter: blur(10px);
+    background-color: rgba(26, 32, 44, 0.9);  /* Matching the new dark theme */
 }
 
 /* Image Styling */
