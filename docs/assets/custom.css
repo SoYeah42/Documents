@@ -68,6 +68,7 @@
 
 /* Light Theme Configuration */
 [data-md-color-scheme="default"] {
+    /* Core colors */
     --md-primary-fg-color: var(--nord10);
     --md-accent-fg-color: var(--nord9);
     --md-bg-color: var(--nord6);         /* Snow Storm - lightest */
@@ -95,6 +96,50 @@
 
 [data-md-color-scheme="slate"] .md-content__inner {
     background-color: var(--mocha-bg);
+}
+
+/* Light Theme Specific Overrides */
+[data-md-color-scheme="default"] .md-nav {
+    background-color: var(--nord6);
+    color: var(--nord1);
+}
+
+[data-md-color-scheme="default"] .md-sidebar__scrollwrap {
+    background-color: var(--nord6);
+}
+
+[data-md-color-scheme="default"] .md-content__inner {
+    background-color: var(--nord6);
+}
+
+[data-md-color-scheme="default"] .md-header {
+    background-color: var(--nord5);
+    color: var(--nord1);
+}
+
+[data-md-color-scheme="default"] .md-nav__title {
+    background-color: var(--nord5) !important;
+    color: var(--nord1);
+}
+
+[data-md-color-scheme="default"] .md-content article {
+    background: var(--nord5);
+    border: 1px solid var(--nord4);
+}
+
+[data-md-color-scheme="default"] .highlight {
+    background: var(--nord4) !important;
+    border: 1px solid var(--nord3);
+}
+
+[data-md-color-scheme="default"] .md-typeset h1,
+[data-md-color-scheme="default"] .md-typeset h2,
+[data-md-color-scheme="default"] .md-typeset h3,
+[data-md-color-scheme="default"] .md-typeset h4,
+[data-md-color-scheme="default"] .md-typeset h5,
+[data-md-color-scheme="default"] .md-typeset h6 {
+    color: var(--nord10);
+    -webkit-text-fill-color: var(--nord10);
 }
 
 /* Document Background */
