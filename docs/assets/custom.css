@@ -251,10 +251,11 @@ h1, h2, h3, h4, h5, h6 {
 .md-nav__link {
     padding: 0.4rem 0.6rem;  /* Adjusted padding */
     white-space: normal;     /* Allow text wrapping */
-    line-height: 1.3;        /* Better line height for wrapped text */
+    line-height: 1.4;        /* Better line height for readability */
+    word-wrap: break-word;   /* Ensure long words wrap */
     height: auto;            /* Allow height to adjust to content */
-    margin: 0.2rem 0;
-    border-radius: var(--border-radius);
+    margin: 0;
+    border-radius: 6px;
     transition: all var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -283,7 +284,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Sidebar Background Fix */
 .md-sidebar__scrollwrap {
     background-color: var(--md-document-bg-color);
-    padding: 0 0.4rem;       /* Reduced padding */
+    padding: 0 0.2rem;       /* Reduced padding */
 }
 
 /* Interactive Elements */
@@ -477,7 +478,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .md-nav__list {
     border-radius: var(--border-radius);
-    padding-right: 0.2rem;   /* Reduced padding */
+    padding-right: 0.1rem;   /* Reduced padding */
     width: 100%;
 }
 
@@ -498,7 +499,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 [data-md-color-scheme="default"] .md-sidebar__scrollwrap {
-    padding: 0 0.4rem;       /* Reduced padding */
+    padding: 0 0.2rem;       /* Reduced padding */
 }
 
 /* Image Styling */
@@ -548,6 +549,8 @@ h1, h2, h3, h4, h5, h6 {
 .md-content {
     animation: none;
     max-width: none;
+    margin: 0 auto;         /* Center the article */
+    padding-left: 1rem;     /* Reduce padding between nav and content */
 }
 
 .md-content__inner {
@@ -592,6 +595,7 @@ h1, h2, h3, h4, h5, h6 {
 .md-sidebar {
     width: 16rem !important;
     min-width: 12rem;
+    padding: 0;
 }
 
 /* Mobile Responsiveness Fixes */
@@ -627,7 +631,7 @@ h1, h2, h3, h4, h5, h6 {
     /* Adjust article padding for mobile */
     .md-content article {
         padding: 1rem;
-        margin: 1rem 0;
+        margin: 1rem auto;      /* Center the article frame */
     }
 
     /* Navigation Items */
@@ -641,10 +645,12 @@ h1, h2, h3, h4, h5, h6 {
 @media screen and (min-width: 76.25em) and (max-width: 88em) {
     .md-grid {
         max-width: calc(100% - 16rem) !important;
+        margin: 0 auto;         /* Center the content */
+        padding: 0 1rem;        /* Add some padding on the sides */
     }
 
     .md-content {
-        margin-left: 16rem;
+        margin-left: 16rem;  /* Account for sidebar width */
     }
 }
 
@@ -652,6 +658,8 @@ h1, h2, h3, h4, h5, h6 {
 @media screen and (min-width: 88em) {
     .md-grid {
         max-width: 90rem !important;
+        margin: 0 auto;         /* Center the content */
+        padding: 0 1rem;        /* Add some padding on the sides */
     }
 }
 
@@ -663,25 +671,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .md-nav__list {
     width: 100%;
-    padding-right: 0.2rem;   /* Reduced padding */
+    padding-right: 0.1rem;   /* Reduce right padding */
 }
 
 /* Navigation Items */
 .md-nav__item {
-    margin: 2px 0;           /* Reduced margin */
-    width: 100%;
+    margin: 2px 0;
     padding: 0;
-}
-
-.md-nav__link {
-    padding: 0.4rem 0.6rem;  /* Adjusted padding */
-    margin: 0;
-    border-radius: 6px;
     width: 100%;
-    display: block;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
 }
 
 /* Nested Navigation */
@@ -692,7 +689,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Scrollbar for Navigation */
 .md-sidebar__scrollwrap {
     margin: 0;
-    padding: 0 0.4rem;       /* Reduced padding */
+    padding: 0 0.2rem;       /* Reduce padding in navigation */
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -724,12 +721,15 @@ h1, h2, h3, h4, h5, h6 {
 /* Article Width and Layout */
 .md-grid {
     max-width: 90rem !important;  /* Increased from default */
+    margin: 0 auto;         /* Center the content */
+    padding: 0 1rem;        /* Add some padding on the sides */
 }
 
 /* Article Container */
 .md-content article {
     max-width: 100%;
-    padding: 2rem;           /* Reduced padding */
+    margin: 1rem auto;      /* Center the article frame */
+    padding: 2rem;
 }
 
 /* Ensure content adjusts to navigation */
